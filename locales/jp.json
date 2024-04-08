@@ -1,0 +1,221 @@
+{
+    "back": {
+        "common": {
+            "title": "CRMシステム"
+        },
+        "menu": {
+            "bussiness": {
+                "root": "業務操作",
+                "pick": "選購",
+                "place": "注文",
+                "deliver": "配送"
+            },
+            "maintain": {
+                "root": "情報維持",
+                "category": "カテゴリー",
+                "goods": "商品",
+                "stock": "在庫",
+                "order": "注文",
+                "customer": "顧客"
+            }
+        },
+        "page": {
+            "bussiness": {
+                "pick": {
+                    "title": "選購",
+                    "goodsListTitle": "商品リスト",
+                    "cartListTitle": "ショッピングカート",
+                    "categoryTitle": "カテゴリー",
+                    "searchBtn": "検索",
+                    "goodsTable": {
+                        "columns": {
+                            "img": "画像",
+                            "name": "商品名",
+                            "innerCode": "内部コード",
+                            "isbn": "ISBN",
+                            "sku": "SKU",
+                            "spu": "SPU",
+                            "status": "ステータス",
+                            "action": "操作"
+                        }
+                    },
+                    "cartTable": {
+                        "columns": {
+                            "img": "画像",
+                            "name": "商品名",
+                            "qty": "数量",
+                            "action": "操作"
+                        }
+                    }
+                },
+                "place": {
+                    "title": "注文",
+                    "orderTitle": "注文",
+                    "noPayTypeErr": "支払い方法を選択してください",
+                    "address": {
+                        "form": {
+                            "name": "受取人",
+                            "tel": "固定電話",
+                            "phone": "携帯電話",
+                            "country": "国/地域",
+                            "addressCascade": "住所",
+                            "addressDetail": "詳細住所",
+                            "submitBtn": "提出",
+                            "resetBtn": "リセット"
+                        }
+                    },
+                    "order": {
+                        "form": {
+                            "goodsNo": "商品番号",
+                            "goodsName": "商品名",
+                            "qty": "数量",
+                            "salePrice": "単価",
+                            "totalPrice": "合計"
+                        }
+                    },
+                    "payType": {
+                        "cash": "現金",
+                        "aliPay": "アリペイ",
+                        "wechatPay": "WeChat支払い"
+                    },
+                    "placeBtn": "今すぐ購入"
+                },
+                "deliver": {}
+            },
+            "maintain": {
+                "category": {
+                    "title": "カテゴリ情報維持",
+                    "addBtn": "追加",
+                    "deleteBtn": "削除",
+                    "modalForm": {
+                        "title": "カテゴリ情報の編集",
+                        "pid": "親ノード",
+                        "name": "名前",
+                        "code": "コード",
+                        "intro": "備考"
+                    },
+                    "columns": {
+                        "name": "名前",
+                        "code": "コード",
+                        "level": "レベル",
+                        "intro": "備考",
+                        "action": "操作"
+                    }
+                },
+                "goods": {
+                    "title": "商品情報維持",
+                    "searchForm": {
+                        "name": "名前",
+                        "innerCode": "内部コード",
+                        "sku": "SKU",
+                        "spu": "SPU",
+                        "isbn": "ISBN",
+                        "status": "ステータス",
+                        "category": "カテゴリー",
+                        "searchBtn": "検索"
+                    },
+                    "addBtn": "追加",
+                    "goodsColumns": {
+                        "category": "カテゴリー",
+                        "name": "名前",
+                        "innerCode": "内部コード",
+                        "isbn": "ISBN",
+                        "sku": "SKU",
+                        "spu": "SPU",
+                        "status": "ステータス",
+                        "salePrice": "販売価格",
+                        "purchasePrice": "購入価格",
+                        "intro": "備考",
+                        "action": "操作"
+                    },
+                    "goodsModalForm": {
+                        "category": "カテゴリー",
+                        "name": "名前",
+                        "innerCode": "内部コード",
+                        "isbn": "ISBN",
+                        "sku": "SKU",
+                        "spu": "SPU",
+                        "status": "ステータス",
+                        "salePrice": "販売価格",
+                        "purchasePrice": "購入価格",
+                        "intro": "備考"
+                    },
+                    "goodsStatusEnum": {
+                        "new": "新規",
+                        "audit": "審査待ち",
+                        "up": "販売中",
+                        "down": "販売停止",
+                        "disabled": "無効"
+                    }
+                },
+                "stock": {
+                    "title": "在庫情報維持",
+                    "searchForm": {
+                        "name": "名前",
+                        "innerCode": "内部コード",
+                        "sku": "SKU",
+                        "spu": "SPU",
+                        "stockType": "在庫タイプ",
+                        "searchBtn": "検索"
+                    },
+                    "btnGroup": {
+                        "addBtn": "追加",
+                        "enableBtn": "有効化",
+                        "disabledBtn": "停止"
+                    },
+                    "columns": {
+                        "warehouse": "倉庫",
+                        "stockType": "在庫タイプ",
+                        "goodsName": "商品名",
+                        "innerCode": "内部コード",
+                        "sku": "SKU",
+                        "spu": "SPU",
+                        "stockQtyHighLevel": "在庫高ライン",
+                        "stockQty": "数量",
+                        "stockQtyLowLevel": "在庫低ライン",
+                        "status": "ステータス",
+                        "action": "操作"
+                    },
+                    "stockStatus": {
+                        "available": "利用可能在庫",
+                        "frozen": "凍結在庫",
+                        "defective": "不良在庫",
+                        "pending": "処理待ち在庫",
+                        "returning": "返品受け取り在庫",
+                        "inbound": "入庫中在庫",
+                        "outbound": "出庫中在庫",
+                        "qualityCheck": "品質検査在庫",
+                        "returningTransit": "返品中在庫"
+                    }
+                },
+                "order": {
+                    "title": "注文情報維持",
+                    "searchForm": {
+                        "orderNo": "注文番号",
+                        "status": "ステータス",
+                        "searchBtn": "検索"
+                    },
+                    "addBtn": "追加",
+                    "deleteBtn": "削除",
+                    "orderColumns": {
+                        "orderNo": "注文番号",
+                        "name": "名前",
+                        "memberName": "顧客名",
+                        "createTime": "注文時間",
+                        "payNo": "支払い番号",
+                        "payTime": "支払い時間",
+                        "payType": "支払い方法",
+                        "status": "ステータス",
+                        "action": "操作",
+                        "detailBtn": "詳細を見る",
+                        "cancleBtn": "注文をキャンセル"
+                    },
+                    "statusOptions": {
+                        "create": "作成"
+                    }
+                },
+                "customer": "顧客"
+            }
+        }
+    }
+}

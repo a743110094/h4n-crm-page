@@ -1,0 +1,236 @@
+{
+    "back": {
+        "common": {
+            "title": "CRM System"
+        },
+        "menu": {
+            "bussiness": {
+                "root": "Business Operations",
+                "pick": "Pick",
+                "place": "Place Order",
+                "deliver": "Deliver"
+            },
+            "maintain": {
+                "root": "Information Maintain",
+                "category": "Category",
+                "goods": "Goods",
+                "stock": "Stock",
+                "order": "Order",
+                "customer": "Customer"
+            }
+        },
+        "page": {
+            "bussiness": {
+                "pick": {
+                    "title": "Pick",
+                    "goodsListTitle": "Goods List",
+                    "cartListTitle": "Shopping Cart",
+                    "categoryTitle": "Category",
+                    "searchBtn": "Search",
+                    "goodsTable": {
+                        "columns": {
+                            "img": "Image",
+                            "name": "Goods Name",
+                            "innerCode": "Internal Code",
+                            "isbn": "ISBN",
+                            "sku": "SKU",
+                            "spu": "SPU",
+                            "status": "Status",
+                            "action": "Action"
+                        }
+                    },
+                    "cartTable": {
+                        "columns": {
+                            "img": "Image",
+                            "name": "Goods Name",
+                            "qty": "Quantity",
+                            "action": "Action"
+                        }
+                    }
+                },
+                "place": {
+                    "title": "Shopping Cart",
+                    "orderTitle": "Order",
+                    "noPayTypeErr": "Please Select Payment Method",
+                    "address": {
+                        "form": {
+                            "name": "Receiver",
+                            "tel": "Telephone",
+                            "phone": "Mobile",
+                            "country": "Country/Region",
+                            "postcode": "Postcode",
+                            "province": "Province",
+                            "city": "City",
+                            "region": "Region",
+                            "addressCascade": "Address",
+                            "addressDetail": "Detailed Address",
+                            "submitBtn": "Submit",
+                            "resetBtn": "Reset"
+                        }
+                    },
+                    "errMsg": {
+                        "receiverName": "Name is required, length should be between 2-20 characters",
+                        "phone": "Phone number is required, length should be between 5-50 characters",
+                        "country": "Country is required, length should be between 1-200 characters",
+                        "postcode": "Postcode is required, length should be between 2-200 characters",
+                        "province": "Province is required, length should be between 2-200 characters",
+                        "city": "City is required, length should be between 2-200 characters",
+                        "region": "Region is required, length should be between 2-200 characters",
+                        "addressCascader": "Address is required",
+                        "detailAddress": "Detail address is required, length should be between 6-500 characters"
+                    },
+                    "order": {
+                        "form": {
+                            "goodsNo": "Goods No",
+                            "goodsName": "Goods Name",
+                            "qty": "Quantity",
+                            "salePrice": "Unit Price",
+                            "totalPrice": "Total Price"
+                        }
+                    },
+                    "payType": {
+                        "cash": "Cash",
+                        "aliPay": "AliPay",
+                        "wechatPay": "Wechat Pay"
+                    },
+                    "placeBtn": "Place Order"
+                },
+                "deliver": {}
+            },
+            "maintian": {
+                "category": {
+                    "title": "Category Information Maintain",
+                    "addBtn": "Add",
+                    "deleteBtn": "Delete",
+                    "modalForm": {
+                        "title": "Edit Category Information",
+                        "pid": "Parent Node",
+                        "name": "Name",
+                        "code": "Code",
+                        "intro": "Remarks"
+                    },
+                    "columns": {
+                        "name": "Name",
+                        "code": "Code",
+                        "level": "Level",
+                        "intro": "Remarks",
+                        "action": "Action"
+                    }
+                },
+                "goods": {
+                    "title": "Goods Information Maintain",
+                    "searchForm": {
+                        "name": "Name",
+                        "innerCode": "Internal Code",
+                        "sku": "SKU",
+                        "spu": "SPU",
+                        "isbn": "ISBN",
+                        "status": "Status",
+                        "category": "Category",
+                        "searchBtn": "Search"
+                    },
+                    "addBtn": "Add",
+                    "goodsColumns": {
+                        "category": "Category",
+                        "name": "Name",
+                        "innerCode": "Internal Code",
+                        "isbn": "ISBN",
+                        "sku": "SKU",
+                        "spu": "SPU",
+                        "status": "Status",
+                        "salePrice": "Sale Price",
+                        "purchasePrice": "Purchase Price",
+                        "intro": "Remarks",
+                        "action": "Action"
+                    },
+                    "goodsModalForm": {
+                        "category": "Category",
+                        "name": "Name",
+                        "innerCode": "Internal Code",
+                        "isbn": "ISBN",
+                        "sku": "SKU",
+                        "spu": "SPU",
+                        "status": "Status",
+                        "salePrice": "Sale Price",
+                        "purchasePrice": "Purchase Price",
+                        "intro": "Remarks"
+                    },
+                    "goodsStatusEnum": {
+                        "new": "New",
+                        "audit": "Pending Audit",
+                        "up": "Up",
+                        "down": "Down",
+                        "disabled": "Disabled"
+                    }
+                },
+                "stock": {
+                    "title": "Stock Information Maintain",
+                    "searchForm": {
+                        "name": "Name",
+                        "innerCode": "Internal Code",
+                        "sku": "SKU",
+                        "spu": "SPU",
+                        "stockType": "Stock Type",
+                        "searchBtn": "Search"
+                    },
+                    "btnGroup": {
+                        "addBtn": "Add",
+                        "enableBtn": "Enable",
+                        "disabledBtn": "Disable"
+                    },
+                    "columns": {
+                        "warehouse": "Warehouse",
+                        "stockType": "Stock Type",
+                        "goodsName": "Goods Name",
+                        "innerCode": "Internal Code",
+                        "sku": "SKU",
+                        "spu": "SPU",
+                        "stockQtyHighLevel": "High Stock Line",
+                        "stockQty": "Quantity",
+                        "stockQtyLowLevel": "Low Stock Line",
+                        "status": "Status",
+                        "action": "Action"
+                    },
+                    "stockStatus": {
+                        "available": "Available Stock",
+                        "frozen": "Frozen Stock",
+                        "defective": "Defective Stock",
+                        "pending": "Pending Stock",
+                        "returning": "Return Receipt Stock",
+                        "inbound": "Inbound Transit Stock",
+                        "outbound": "Outbound Transit Stock",
+                        "qualityCheck": "Quality Check Stock",
+                        "returningTransit": "Return Transit Stock"
+                    }
+                },
+                "order": {
+                    "title": "Order Information Maintain",
+                    "searchForm": {
+                        "orderNo": "Order No",
+                        "status": "Status",
+                        "searchBtn": "Search"
+                    },
+                    "addBtn": "Add",
+                    "deleteBtn": "Delete",
+                    "orderColumns": {
+                        "orderNo": "Order No",
+                        "name": "Name",
+                        "memberName": "Customer Name",
+                        "createTime": "Order Time",
+                        "payNo": "Payment No",
+                        "payTime": "Payment Time",
+                        "payType": "Payment Method",
+                        "status": "Status",
+                        "action": "Action",
+                        "detailBtn": "View Details",
+                        "cancleBtn": "Cancel Order"
+                    },
+                    "statusOptions": {
+                        "create": "Create"
+                    }
+                },
+                "customer": "Customer"
+            }
+        }
+    }
+}

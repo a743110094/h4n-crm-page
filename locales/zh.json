@@ -1,0 +1,236 @@
+{
+    "back": {
+        "common": {
+            "title": "CRM系统"
+        },
+        "menu": {
+            "bussiness": {
+                "root": "业务操作",
+                "pick": "选购",
+                "place": "下单",
+                "deliver": "发货"
+            },
+            "maintain": {
+                "root": "信息维护",
+                "category": "分类",
+                "goods": "商品",
+                "stock": "库存",
+                "order": "订单",
+                "customer": "客户"
+            }
+        },
+        "page": {
+            "bussiness": {
+                "pick": {
+                    "title": "选购",
+                    "goodsListTitle": "商品列表",
+                    "cartListTitle": "购物车",
+                    "categoryTitle": "分类",
+                    "searchBtn": "搜索",
+                    "goodsTable": {
+                        "columns": {
+                            "img": "图片",
+                            "name": "商品名",
+                            "innerCode": "自编码",
+                            "isbn": "ISBN",
+                            "sku": "SKU",
+                            "spu": "SPU",
+                            "status": "状态",
+                            "action": "操作"
+                        }
+                    },
+                    "cartTable": {
+                        "columns": {
+                            "img": "图片",
+                            "name": "商品名",
+                            "qty": "数量",
+                            "action": "操作"
+                        }
+                    }
+                },
+                "place": {
+                    "title": "购物车",
+                    "orderTitle": "订单",
+                    "noPayTypeErr": "请选择支付方式",
+                    "address": {
+                        "form": {
+                            "name": "收货人",
+                            "tel": "固定电话",
+                            "phone": "手机号",
+                            "country": "国家/地区",
+                            "postcode": "邮编",
+                            "province": "省份",
+                            "city": "市",
+                            "region": "区",
+                            "addressCascade": "地址",
+                            "addressDetail": "详细地址",
+                            "submitBtn": "提交",
+                            "resetBtn": "重置"
+                        }
+                    },
+                    "errMsg":{
+                        "receiverName":"姓名必填，长度介于2-20位",
+                        "phone":"手机号必填，长度介于5-50位",
+                        "country":"国家必填，长度介于1-200位",
+                        "postcode":"邮编必填，长度介于2-200位",
+                        "province":"省份必填，长度介于2-200位",
+                        "city":"城市必填，长度介于2-200位",
+                        "region":"区域必填，长度介于2-200位",
+                        "addressCascader":"地址必填",
+                        "detailAddress":"地址必填，长度介于6-500位"
+                    },
+                    "order": {
+                        "form": {
+                            "goodsNo": "商品编号",
+                            "goodsName": "商品名称",
+                            "qty": "数量",
+                            "salePrice": "单价",
+                            "totalPrice": "总价"
+                        }
+                    },
+                    "payType": {
+                        "cash": "现金",
+                        "aliPay": "支付宝",
+                        "wechatPay": "微信支付"
+                    },
+                    "placeBtn": "立即下单"
+                },
+                "deliver": {}
+            },
+            "maintian": {
+                "category": {
+                    "title": "分类信息维护",
+                    "addBtn": "新增",
+                    "deleteBtn": "删除",
+                    "modalForm": {
+                        "title": "编辑分类信息",
+                        "pid": "上级节点",
+                        "name": "名称",
+                        "code": "编码",
+                        "intro": "备注"
+                    },
+                    "columns": {
+                        "name": "名称",
+                        "code": "编码",
+                        "level": "层级",
+                        "intro": "备注",
+                        "action": "操作"
+                    }
+                },
+                "goods": {
+                    "title": "商品信息维护",
+                    "searchForm": {
+                        "name": "名称",
+                        "innerCode": "自编码",
+                        "sku": "SKU",
+                        "spu": "SPU",
+                        "isbn": "ISBN",
+                        "status": "状态",
+                        "category": "分类",
+                        "searchBtn": "查找"
+                    },
+                    "addBtn": "新增",
+                    "goodsColumns": {
+                        "category": "分类",
+                        "name": "名称",
+                        "innerCode": "自编码",
+                        "isbn": "ISBN",
+                        "sku": "SKU",
+                        "spu": "SPU",
+                        "status": "状态",
+                        "salePrice": "售价",
+                        "purchasePrice": "进价",
+                        "intro": "备注",
+                        "action": "操作"
+                    },
+                    "goodsModalForm": {
+                        "category": "分类",
+                        "name": "名称",
+                        "innerCode": "自编码",
+                        "isbn": "ISBN",
+                        "sku": "SKU",
+                        "spu": "SPU",
+                        "status": "状态",
+                        "salePrice": "售价",
+                        "purchasePrice": "进价",
+                        "intro": "备注"
+                    },
+                    "goodsStatusEnum": {
+                        "new": "新建",
+                        "audit": "待审核",
+                        "up": "上架",
+                        "down": "下架",
+                        "disabled": "禁用"
+                    }
+                },
+                "stock": {
+                    "title": "库存信息维护",
+                    "searchForm": {
+                        "name": "名称",
+                        "innerCode": "自编码",
+                        "sku": "SKU",
+                        "spu": "SPU",
+                        "stockType": "库存类型",
+                        "searchBtn": "查找"
+                    },
+                    "btnGroup": {
+                        "addBtn": "新增",
+                        "enableBtn": "启用",
+                        "disabledBtn": "停用"
+                    },
+                    "columns": {
+                        "warehouse": "仓库",
+                        "stockType": "库存类型",
+                        "goodsName": "商品名",
+                        "innerCode": "自编码",
+                        "sku": "SKU",
+                        "spu": "SPU",
+                        "stockQtyHighLevel": "库存高线",
+                        "stockQty": "数量",
+                        "stockQtyLowLevel": "库存低线",
+                        "status": "状态",
+                        "action": "操作"
+                    },
+                    "stockStatus": {
+                        "available": "可用库存",
+                        "frozen": "冻结库存",
+                        "defective": "残次品库存",
+                        "pending": "待处理库存",
+                        "returning": "退货接收库存",
+                        "inbound": "入库在途库存",
+                        "outbound": "出库在途库存",
+                        "qualityCheck": "质检库存",
+                        "returningTransit": "退货在途库存"
+                    }
+                },
+                "order": {
+                    "title": "订单信息维护",
+                    "searchForm":{
+                        "orderNo":"订单号",
+                        "status":"状态",
+                        "searchBtn":"搜索"
+                    },
+                    "addBtn":"新增",
+                    "deleteBtn":"删除",
+                    "orderColumns": {
+                        "orderNo": "订单号",
+                        "name": "名称",
+                        "memberName": "客户名",
+                        "createTime": "下单时间",
+                        "payNo": "支付单号",
+                        "payTime": "支付时间",
+                        "payType": "支付方式",
+                        "status": "状态",
+                        "action": "操作",
+                        "detailBtn": "查看详情",
+                        "cancleBtn": "取消订单"
+                    },
+                    "statusOptions":{
+                        "create":"创建"
+                    }
+                },
+                "customer": "客户"
+            }
+        }
+    }
+}

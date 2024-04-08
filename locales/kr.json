@@ -1,0 +1,236 @@
+{
+    "back": {
+        "common": {
+            "title": "CRM 시스템"
+        },
+        "menu": {
+            "bussiness": {
+                "root": "비즈니스 작업",
+                "pick": "선택",
+                "place": "주문",
+                "deliver": "배송"
+            },
+            "maintain": {
+                "root": "정보 유지",
+                "category": "분류",
+                "goods": "상품",
+                "stock": "재고",
+                "order": "주문",
+                "customer": "고객"
+            }
+        },
+        "page": {
+            "bussiness": {
+                "pick": {
+                    "title": "선택",
+                    "goodsListTitle": "상품 목록",
+                    "cartListTitle": "장바구니",
+                    "categoryTitle": "분류",
+                    "searchBtn": "검색",
+                    "goodsTable": {
+                        "columns": {
+                            "img": "이미지",
+                            "name": "상품명",
+                            "innerCode": "자체 코드",
+                            "isbn": "ISBN",
+                            "sku": "SKU",
+                            "spu": "SPU",
+                            "status": "상태",
+                            "action": "조작"
+                        }
+                    },
+                    "cartTable": {
+                        "columns": {
+                            "img": "이미지",
+                            "name": "상품명",
+                            "qty": "수량",
+                            "action": "조작"
+                        }
+                    }
+                },
+                "place": {
+                    "title": "장바구니",
+                    "orderTitle": "주문",
+                    "noPayTypeErr": "결제 방식을 선택하십시오",
+                    "address": {
+                        "form": {
+                            "name": "수취인",
+                            "tel": "전화",
+                            "phone": "휴대 전화",
+                            "country": "국가/지역",
+                            "postcode": "우편 번호",
+                            "province": "Province",
+                            "city": "City",
+                            "region": "Region",
+                            "addressCascade": "주소",
+                            "addressDetail": "상세한 주소",
+                            "submitBtn": "제출",
+                            "resetBtn": "재설정"
+                        }
+                    },
+                    "errMsg": {
+                        "receiverName": "이름은 2-20자여야 합니다",
+                        "phone": "전화번호는 5-50자여야 합니다",
+                        "country": "국가는 1-200자여야 합니다",
+                        "postcode": "우편번호는 2-200자여야 합니다",
+                        "province": "도는 2-200자여야 합니다",
+                        "city": "도시는 2-200자여야 합니다",
+                        "region": "지역은 2-200자여야 합니다",
+                        "addressCascader": "주소를 입력해주세요",
+                        "detailAddress": "상세 주소는 6-500자여야 합니다"
+                    },
+                    "order": {
+                        "form": {
+                            "goodsNo": "상품 번호",
+                            "goodsName": "상품 이름",
+                            "qty": "수량",
+                            "salePrice": "가격",
+                            "totalPrice": "합계"
+                        }
+                    },
+                    "payType": {
+                        "cash": "현금",
+                        "aliPay": "알리페이",
+                        "wechatPay": "위챗 페이"
+                    },
+                    "placeBtn": "지금 주문"
+                },
+                "deliver": {}
+            },
+            "maintian": {
+                "category": {
+                    "title": "분류 정보 유지",
+                    "addBtn": "새로 추가",
+                    "deleteBtn": "삭제",
+                    "modalForm": {
+                        "title": "분류 정보 편집",
+                        "pid": "상위 노드",
+                        "name": "이름",
+                        "code": "코드",
+                        "intro": "비고"
+                    },
+                    "columns": {
+                        "name": "이름",
+                        "code": "코드",
+                        "level": "수준",
+                        "intro": "비고",
+                        "action": "조작"
+                    }
+                },
+                "goods": {
+                    "title": "상품 정보 유지",
+                    "searchForm": {
+                        "name": "이름",
+                        "innerCode": "자체 코드",
+                        "sku": "SKU",
+                        "spu": "SPU",
+                        "isbn": "ISBN",
+                        "status": "상태",
+                        "category": "분류",
+                        "searchBtn": "찾기"
+                    },
+                    "addBtn": "새로 추가",
+                    "goodsColumns": {
+                        "category": "분류",
+                        "name": "이름",
+                        "innerCode": "자체 코드",
+                        "isbn": "ISBN",
+                        "sku": "SKU",
+                        "spu": "SPU",
+                        "status": "상태",
+                        "salePrice": "가격",
+                        "purchasePrice": "구매 가격",
+                        "intro": "비고",
+                        "action": "조작"
+                    },
+                    "goodsModalForm": {
+                        "category": "분류",
+                        "name": "이름",
+                        "innerCode": "자체 코드",
+                        "isbn": "ISBN",
+                        "sku": "SKU",
+                        "spu": "SPU",
+                        "status": "상태",
+                        "salePrice": "가격",
+                        "purchasePrice": "구매 가격",
+                        "intro": "비고"
+                    },
+                    "goodsStatusEnum": {
+                        "new": "신규",
+                        "audit": "심사 대기 중",
+                        "up": "출시",
+                        "down": "하락",
+                        "disabled": "비활성"
+                    }
+                },
+                "stock": {
+                    "title": "재고 정보 유지",
+                    "searchForm": {
+                        "name": "이름",
+                        "innerCode": "자체 코드",
+                        "sku": "SKU",
+                        "spu": "SPU",
+                        "stockType": "재고 유형",
+                        "searchBtn": "찾기"
+                    },
+                    "btnGroup": {
+                        "addBtn": "새로 추가",
+                        "enableBtn": "사용",
+                        "disabledBtn": "사용 안 함"
+                    },
+                    "columns": {
+                        "warehouse": "창고",
+                        "stockType": "재고 유형",
+                        "goodsName": "상품명",
+                        "innerCode": "자체 코드",
+                        "sku": "SKU",
+                        "spu": "SPU",
+                        "stockQtyHighLevel": "고 수준 재고",
+                        "stockQty": "수량",
+                        "stockQtyLowLevel": "낮은 수준 재고",
+                        "status": "상태",
+                        "action": "조작"
+                    },
+                    "stockStatus": {
+                        "available": "사용 가능한 재고",
+                        "frozen": "동결된 재고",
+                        "defective": "결함 재고",
+                        "pending": "처리 대기 중인 재고",
+                        "returning": "반품 수령 재고",
+                        "inbound": "입고 중인 재고",
+                        "outbound": "출고 중인 재고",
+                        "qualityCheck": "품질 검사 재고",
+                        "returningTransit": "반품 중인 재고"
+                    },
+                    "order": {
+                        "title": "주문 정보 유지",
+                        "searchForm": {
+                            "orderNo": "주문 번호",
+                            "status": "상태",
+                            "searchBtn": "검색"
+                        },
+                        "addBtn": "새로 추가",
+                        "deleteBtn": "삭제",
+                        "orderColumns": {
+                            "orderNo": "주문 번호",
+                            "name": "이름",
+                            "memberName": "고객명",
+                            "createTime": "주문 시간",
+                            "payNo": "결제 번호",
+                            "payTime": "결제 시간",
+                            "payType": "결제 방식",
+                            "status": "상태",
+                            "action": "조작",
+                            "detailBtn": "세부 정보보기",
+                            "cancleBtn": "주문 취소"
+                        },
+                        "statusOptions": {
+                            "create": "창조"
+                        }
+                    },
+                    "customer": "고객"
+                }
+            }
+        }
+    }
+}
