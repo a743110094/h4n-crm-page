@@ -7,7 +7,7 @@
 
   <VLayout fit-window fixed-main :expanded="false" logo="https://www.vexipui.com/vexip-ui.svg"
     :sign-name="$t('back.common.title')" :user="user" :menus="menus" :style="{
-      '--vxp-layout-aside-width': `160px`,
+      '--vxp-layout-aside-width': `210px`,
     }" :on-menu-select="omMenuSelect" @user-action="handleUserAction">
     <template #header-right>
       <!-- <VLinker to="https://github.com/vexip-ui/vexip-ui" style="display: flex; margin-inline-end: 16px">

@@ -33,7 +33,7 @@ div
 import { h, onMounted, ref } from 'vue';
 import api from '~/api/api';
 import { MagnifyingGlass, CartPlus, Trash } from '@vexip-ui/icons'
-import { Image, Button, Message, NumberInput } from 'vexip-ui';
+ import { Button,Image, Message, NumberInput } from 'vexip-ui';
 ///--------Const
 const goodsTableIsLoading = ref(false);
 const cartTableIsLoading = ref(false);
@@ -56,7 +56,7 @@ const columns = [
   { name: `${i18n.t('back.page.bussiness.pick.goodsTable.columns.status')}`, key: 'status' },
   {
     name: `${i18n.t('back.page.bussiness.pick.goodsTable.columns.action')}`, width: 130,
-    renderer: (data) =>
+    renderer: (data:any) =>
       h(
         Button, { size: "small", simple: true, type: "warning", icon: CartPlus, onClick: () => addToCartBtnClick(data.row.id) }, ["加入购物车"]
       )
@@ -74,8 +74,8 @@ const cartColumns = [
     },*/
   { name: `${i18n.t('back.page.bussiness.pick.cartTable.columns.name')}`, key: 'goodsName' },
   {
-    name: `${i18n.t('back.page.bussiness.pick.cartTable.columns.qty')}`, key: 'qty', width: 70,
-    renderer: (data) =>
+    name: `${i18n.t('back.page.bussiness.pick.cartTable.columns.qty')}`, key: 'qty', width: 80,
+    renderer: (data:any) =>
       h(
         NumberInput, {
         size: "small", value: data.row.qty, "onUpdate:value": (val) => {
@@ -89,7 +89,7 @@ const cartColumns = [
   },
   {
     name: `${i18n.t('back.page.bussiness.pick.cartTable.columns.action')}`, width: 100,
-    renderer: (data) =>
+    renderer: (data:any) =>
       h(
         Button, { size: "small", simple: true, type: "error", icon: Trash, onClick: () => deleteCartGoodsInfo(data.row.id) }, ["移除"]
       )
@@ -129,7 +129,7 @@ const getCartGoodsInfo = () => api.orderApi.getUserCartGoodsApi().then(res => ca
 const deleteCartGoodsInfo = (cartId) => api.orderApi.deleteCartGoodsByIdApi(cartId).then(res => {
   const msg = res?.message;
   if (msg) {
-    VMessage.success(msg)
+    Message.success(msg)
   }
   useTimeoutFn(() => getCartGoodsInfo(), 500)
 })
@@ -137,7 +137,7 @@ const deleteCartGoodsInfo = (cartId) => api.orderApi.deleteCartGoodsByIdApi(cart
 const updateCartQtyByIp = (cartId) => api.orderApi.updatCarteGoodsQtyByIdApi(cartId).then(res => {
   const msg = res?.message;
   if (msg) {
-    VMessage.success(msg)
+    Message.success(msg)
   }
   useTimeoutFn(() => getCartGoodsInfo(), 500)
 })
