@@ -39,7 +39,8 @@ export default defineNuxtConfig({
     apiParty: {
         endpoints: {
             realApi: {
-                url: process.env.NODE_ENV === 'development' ? 'http://127.0.0.1:888/api' : 'http://211.101.236.15:888/api',
+                //url: process.env.NODE_ENV === 'development' ? 'http://127.0.0.1:888/api' : 'http://211.101.236.15:888/api',
+                url: 'http://211.101.236.15:888/api',
             }
             /* goodsApi: {
                 // url: process.env.JSON_PLACEHOLDER_API_BASE_URL!,
@@ -73,4 +74,3 @@ export default defineNuxtConfig({
 
 })
 
- 
