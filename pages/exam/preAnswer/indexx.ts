@@ -6,7 +6,7 @@ export const examEndTime = ref('');
 /**
  * 考生信息正在加载
  */
-export const userInfoIsLoading = ref(false);
+export const userInfoIsLoading = ref(true);
 
 /**
  * 考试信息正在加载

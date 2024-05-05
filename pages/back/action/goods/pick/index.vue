@@ -134,7 +134,7 @@ const deleteCartGoodsInfo = (cartId) => api.orderApi.deleteCartGoodsByIdApi(cart
   useTimeoutFn(() => getCartGoodsInfo(), 500)
 })
 // 根据id修改购物车记录的数量
-const updateCartQtyByIp = (cartId) => api.orderApi.updatCarteGoodsQtyByIdApi(cartId).then(res => {
+const updateCartQtyByIp = (cartId) => api.orderApi.updateCarteGoodsQtyByIdApi(cartId).then(res => {
   const msg = res?.message;
   if (msg) {
     Message.success(msg)

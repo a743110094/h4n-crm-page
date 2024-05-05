@@ -60,8 +60,8 @@
 
 
 <script setup lang="ts">
-import {answerDetailApi, getScoreDetailApi} from "~/pages/exam/examRecordResult/api";
-import {dataIsLoading, questions, recordId} from "~/pages/exam/examRecordResult/consts";
+import {answerDetailApi, getScoreDetailApi} from "~/pages/exam/h5/examRecordResult/api";
+import {dataIsLoading, questions, recordId} from "~/pages/exam/h5/examRecordResult/consts";
 // 后台是否正在评分
 const isMarking = ref(false);
 // 是否展示抽屉

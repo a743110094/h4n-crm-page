@@ -1,13 +1,53 @@
+<template lang="pug">
+VForm(style="max-width: 1000px;" class="overflow-auto max-h-[60vh]" size="small" label-align="top" :model="receiverAddrModel" ref="form" :rules="rules" )
+  VFormItem(:span="6" prop="receiverName" :label="$t('back.page.bussiness.place.address.form.name')")
+    VInput/
+  VFormItem(:span="6" prop="dianhua" :label="$t('back.page.bussiness.place.address.form.tel')")
+    VInput/
+  VFormItem(:span="6" prop="phone" :label="$t('back.page.bussiness.place.address.form.phone')")
+    VInput/
+  VFormItem(:span="6" prop="country" :label="$t('back.page.bussiness.place.address.form.country')")
+    VSelect(:options="countryOptions"  filter  ignore-case clearable  :key-config="{ label: 'en', value: 'id' }" @change="loadProviceOptions") 
+  VFormItem(v-if="false" :span="6" prop="postcode" :label="$t('back.page.bussiness.place.address.form.postcode')")
+    VInput
+  VFormItem(v-if="false" :span="6" prop="province" :label="$t('back.page.bussiness.place.address.form.province')")
+    VSelect(:options="provinceOptions"  filter  ignore-case clearable  :key-config="{ label: 'name', value: 'id' }" @change="loadCityOptions")
+  VFormItem(v-if="false" :span="6" prop="city" :label="$t('back.page.bussiness.place.address.form.city')")
+    VSelect(:options="cityOptions"  filter  ignore-case clearable  :key-config="{ label: 'name', value: 'id' }" @change="loadRegionOptions") 
+  VFormItem( v-if="false" :span="6" prop="region" :label="$t('back.page.bussiness.place.address.form.region')")
+    VSelect(:options="regionOptions"  filter  ignore-case clearable  :key-config="{ label: 'name', value: 'id' }") 
+  //VFormItem(:span="16" prop="addressCascader" :label="$t('back.page.bussiness.place.address.form.addressCascade')" )
+    vCascader( :key-config="{ label: 'name', value: 'id' }"  :on-async-load="loadOptions" :options="treeOptions" )
+  VFormItem(prop="detailAddress" :label="$t('back.page.bussiness.place.address.form.addressDetail')")
+    VButton(@click="showAddressSearch = !showAddressSearch") {{ showAddressSearch ? 'Hide Search Box':'Show Search Box' }}  
+    VTextarea(class="ml-4" disabled v-if="!showAddressSearch")/  
+    VueDaumPostcode(v-if="showAddressSearch" @complete="onSearchComplete" :animation=true class="overflow-auto max-h-[48vh] ml-24")/    
+  VFormItem(action="")
+    VFormSubmit(@error="handleError" @submit="handleSubmit" simple="" size="small" :label="$t('back.page.bussiness.place.address.form.submitBtn')")
+    VFormReset(size="small" :icon="CarSide" :label="$t('back.page.bussiness.place.address.form.resetBtn')")
+</template>
+
 <script setup lang="ts">
 
-
 import { rand } from "@vueuse/shared";
+import { VueDaumPostcode, type VueDaumPostcodeSearchResult } from 'vue-daum-postcode'
 import { countryOptions, receiverAddrModel } from "./const_addr";
 import type { SelectFilter } from "vexip-ui/dist/components/select/index.js";
 import type { Form } from "vexip-ui/dist/components/index.js";
 import { placeOrderBtnEnable } from "./const";
 import { CarSide } from "@vexip-ui/icons";
 import $api from "~/request/request";
+
+///////////////////////////////////////////////////地址
+const isOpen = ref(false)
+const result = ref<VueDaumPostcodeSearchResult>()
+
+const onSearch = (result: VueDaumPostcodeSearchResult) => {
+  result = result;
+  isOpen.value = false;
+}
+///////////////////////////////////////////////////
+
 
 const items = ref(
   Array.from({ length: 10 }, (_, index) => {
@@ -102,7 +142,7 @@ const rules = {
   phone: {
     required: true,
     validator: (value: string) => value && value.length >= 5 && value.length < 50,
-    message: i18n.t(`back.page.bussiness.place.errMsg.receiverName`)
+    message: i18n.t(`back.page.bussiness.place.errMsg.phone`)
   },
   // 单个规则
   country: {
@@ -114,17 +154,17 @@ const rules = {
     validator: (value: string) => value && value.length >= 2 && value.length < 200,
     message: i18n.t(`back.page.bussiness.place.errMsg.postcode`)
   },
-  province:{
+  province: {
     required: true,
     message: i18n.t(`back.page.bussiness.place.errMsg.province`)
   },
-  city:{
+  city: {
     required: true,
     message: i18n.t(`back.page.bussiness.place.errMsg.city`)
   },
-  region:{
+  region: {
     required: true,
-    message:i18n.t(`back.page.bussiness.place.errMsg.region`)
+    message: i18n.t(`back.page.bussiness.place.errMsg.region`)
   },
   // 单个规则
   addressCascader: {
@@ -190,34 +230,24 @@ const loadRegionOptions = () => {
   }
 }
 
+/////////////////////////////地址搜索相关方法
+const showAddressSearch = ref(false);
+
+const onSearchComplete = (data) => {
+  const addr = data.address;
+  const postcode = data.postcode;
+  if (addr) {
+    receiverAddrModel.value.detailAddress = addr
+    receiverAddrModel.value.postcode = postcode
+    receiverAddrModel.value.province = '#'
+    receiverAddrModel.value.city = '#'
+    receiverAddrModel.value.region = '#'
+    showAddressSearch.value = false;
+  }
+}
+
+/////////////////////////////地址搜索相关方法
 
 </script>
-
-<template lang="pug">
-VForm(style="max-width: 1000px" size="small" label-align="top" :model="receiverAddrModel" ref="form" :rules="rules" )
-  VFormItem(:span="6" prop="receiverName" :label="$t('back.page.bussiness.place.address.form.name')")
-    VInput/
-  VFormItem(:span="6" prop="dianhua" :label="$t('back.page.bussiness.place.address.form.tel')")
-    VInput/
-  VFormItem(:span="6" prop="phone" :label="$t('back.page.bussiness.place.address.form.phone')")
-    VInput/
-  VFormItem(:span="6" prop="country" :label="$t('back.page.bussiness.place.address.form.country')")
-    VSelect(:options="countryOptions"  filter  ignore-case clearable  :key-config="{ label: 'en', value: 'id' }" @change="loadProviceOptions") 
-  VFormItem(:span="6" prop="postcode" :label="$t('back.page.bussiness.place.address.form.postcode')")
-    VInput
-  VFormItem(:span="6" prop="province" :label="$t('back.page.bussiness.place.address.form.province')")
-    VSelect(:options="provinceOptions"  filter  ignore-case clearable  :key-config="{ label: 'name', value: 'id' }" @change="loadCityOptions")
-  VFormItem(:span="6" prop="city" :label="$t('back.page.bussiness.place.address.form.city')")
-    VSelect(:options="cityOptions"  filter  ignore-case clearable  :key-config="{ label: 'name', value: 'id' }" @change="loadRegionOptions") 
-  VFormItem(:span="6" prop="region" :label="$t('back.page.bussiness.place.address.form.region')")
-    VSelect(:options="regionOptions"  filter  ignore-case clearable  :key-config="{ label: 'name', value: 'id' }") 
-  //VFormItem(:span="16" prop="addressCascader" :label="$t('back.page.bussiness.place.address.form.addressCascade')" )
-    vCascader( :key-config="{ label: 'name', value: 'id' }"  :on-async-load="loadOptions" :options="treeOptions" )
-  VFormItem( prop="detailAddress" :label="$t('back.page.bussiness.place.address.form.addressDetail')")
-    VTextarea/
-  VFormItem(action="")
-    VFormSubmit(@error="handleError" @submit="handleSubmit" simple="" size="small" :label="$t('back.page.bussiness.place.address.form.submitBtn')")
-    VFormReset(size="small" :icon="CarSide" :label="$t('back.page.bussiness.place.address.form.resetBtn')")
-</template>
 
 <style scoped></style>

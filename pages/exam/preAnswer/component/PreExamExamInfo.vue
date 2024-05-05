@@ -38,7 +38,7 @@
   </div>
   <div class="mt-8 grid justify-items-center">
     <!--          考试时间缺失或者当前时间缺失或者还未开始，失效按钮-->
-    <VButton type="primary"
+    <VButton type="primary" @click="toAnswerPageFunc"
              v-bind:disabled="!currentTime || !examStartTime || !(dayjs.unix(currentTime).diff(dayjs(examStartTime)) >= 0)">
       <!--            倒计时是还未开始才显示-->
       开始考试 <span
@@ -50,6 +50,16 @@
 <script setup lang="ts">
 import {currentTime, examInfoIsLoading, examStartTime} from "~/pages/exam/preAnswer/indexx.js";
 import dayjs from "dayjs";
+import {toAnswerPageApi} from "~/pages/exam/preAnswer/pre_answer_api";
+import {recordId} from "~/pages/exam/preAnswer/consts";
 
+
+const toAnswerPageFunc = async () => {
+  await toAnswerPageApi(recordId.value)
+      .then(res=>{
+        const {data} = res;
+        useRouter().push(`/exam/answer?code=${data}`)
+      })
+}
 
 </script>
