@@ -20,7 +20,7 @@ VForm(style="max-width: 1000px;" class="overflow-auto max-h-[60vh]" size="small"
     vCascader( :key-config="{ label: 'name', value: 'id' }"  :on-async-load="loadOptions" :options="treeOptions" )
   VFormItem(prop="detailAddress" :label="$t('back.page.bussiness.place.address.form.addressDetail')")
     VButton(@click="showAddressSearch = !showAddressSearch") {{ showAddressSearch ? 'Hide Search Box':'Show Search Box' }}  
-    VTextarea(class="ml-4" disabled v-if="!showAddressSearch")/  
+    VTextarea(class="ml-4" v-if="!showAddressSearch")/
     VueDaumPostcode(v-if="showAddressSearch" @complete="onSearchComplete" :animation=true class="overflow-auto max-h-[48vh] ml-24")/    
   VFormItem(action="")
     VFormSubmit(@error="handleError" @submit="handleSubmit" simple="" size="small" :label="$t('back.page.bussiness.place.address.form.submitBtn')")

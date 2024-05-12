@@ -237,6 +237,7 @@ const confirmSubmit = async () => {
   })
 
   if (isConfirm) {
+
     //先存答案
     const res = await saveAnswerDataToBackend(tempAnswerOptions.value)
     const res2 = await submitPaper()
